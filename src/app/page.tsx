@@ -5,6 +5,7 @@ import Link from "next/link";
 import {
   Search,
   Printer,
+  Download,
   Ticket,
   ChevronLeft,
   ChevronRight,
@@ -52,13 +53,22 @@ export default function HomePage() {
             {settings.total.toLocaleString()}건
           </span>
         </div>
-        <Link
-          href="/print"
-          className="flex h-9 items-center gap-1.5 rounded-lg bg-[var(--toss-blue)] px-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-[var(--toss-blue-hover)]"
-        >
-          <Printer size={15} strokeWidth={2.4} />
-          <span>일괄 인쇄</span>
-        </Link>
+        <div className="flex items-center gap-2">
+          <Link
+            href="/download"
+            className="flex h-9 items-center gap-1.5 rounded-lg border border-[var(--toss-gray-200)] bg-white px-3.5 text-[13px] font-semibold text-[var(--toss-gray-700)] transition-colors hover:bg-[var(--toss-gray-100)]"
+          >
+            <Download size={15} strokeWidth={2.4} />
+            <span>이미지 다운로드</span>
+          </Link>
+          <Link
+            href="/print"
+            className="flex h-9 items-center gap-1.5 rounded-lg bg-[var(--toss-blue)] px-3.5 text-[13px] font-semibold text-white transition-colors hover:bg-[var(--toss-blue-hover)]"
+          >
+            <Printer size={15} strokeWidth={2.4} />
+            <span>일괄 인쇄</span>
+          </Link>
+        </div>
       </header>
 
       <div className="px-8 py-6">

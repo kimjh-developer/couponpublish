@@ -28,15 +28,15 @@ export const DEFAULTS: CouponSettings = {
   prefix: "SUGO-OPEN-EVENT",
   total: 1000,
   startIndex: 1,
-  textX: 315,
-  textY: 685,
-  textWidth: 400,
+  textX: 290,
+  textY: 750,
+  textWidth: 300,
   fontSize: 44,
   fontColor: "#0b3a8c",
   letterSpacing: 1.2,
-  qrSize: 195,
-  qrX: 612,
-  qrY: 558,
+  qrSize: 150,
+  qrX: 584,
+  qrY: 655,
   qrUrl: "https://sugohero.onelink.me/esFP/8r5i3rkz",
 };
 
@@ -64,7 +64,7 @@ export const useCouponStore = create<CouponState>()(
     }),
     {
       name: "sugohero-coupon-ui",
-      version: 3,
+      version: 5,
       partialize: (state) => ({
         viewMode: state.viewMode,
         settings: state.settings,

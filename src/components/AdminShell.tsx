@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import {
   LayoutGrid,
   Printer,
+  Download,
   Ticket,
   HelpCircle,
   Settings,
@@ -13,6 +14,7 @@ import {
 const nav = [
   { href: "/", label: "쿠폰 목록", icon: LayoutGrid },
   { href: "/print", label: "일괄 인쇄", icon: Printer },
+  { href: "/download", label: "이미지 다운로드", icon: Download },
 ];
 
 const utility = [
