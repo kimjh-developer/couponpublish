@@ -1,26 +1,115 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f9fafb;
+  --foreground: #191f28;
+  --toss-blue: #3182f6;
+  --toss-blue-hover: #1b64da;
+  --toss-blue-light: #e8f3ff;
+  --toss-gray-50: #f9fafb;
+  --toss-gray-100: #f2f4f6;
+  --toss-gray-200: #e5e8eb;
+  --toss-gray-300: #d1d6db;
+  --toss-gray-400: #b0b8c1;
+  --toss-gray-500: #8b95a1;
+  --toss-gray-600: #6b7684;
+  --toss-gray-700: #4e5968;
+  --toss-gray-800: #333d4b;
+  --toss-gray-900: #191f28;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-toss-blue: var(--toss-blue);
+  --color-toss-blue-hover: var(--toss-blue-hover);
+  --color-toss-blue-light: var(--toss-blue-light);
+  --color-toss-gray-50: var(--toss-gray-50);
+  --color-toss-gray-100: var(--toss-gray-100);
+  --color-toss-gray-200: var(--toss-gray-200);
+  --color-toss-gray-300: var(--toss-gray-300);
+  --color-toss-gray-400: var(--toss-gray-400);
+  --color-toss-gray-500: var(--toss-gray-500);
+  --color-toss-gray-600: var(--toss-gray-600);
+  --color-toss-gray-700: var(--toss-gray-700);
+  --color-toss-gray-800: var(--toss-gray-800);
+  --color-toss-gray-900: var(--toss-gray-900);
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+    "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 45 920;
+  font-style: normal;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/woff2/PretendardVariable.woff2")
+    format("woff2-variations");
 }
 
+@font-face {
+  font-family: "Jalnan Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+}
+
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* === Print CSS === */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .print-page {
+    width: 210mm;
+    height: 297mm;
+    page-break-after: always;
+    break-after: page;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 8mm;
+  }
+
+  .print-page:last-child {
+    page-break-after: auto;
+  }
+
+  .print-coupon {
+    width: 170mm;
+    max-height: 100%;
+  }
+}
+
+.print-only {
+  display: none;
 }

@@ -1,0 +1,4488 @@
+﻿
+> sugohero-temp-coupon-system@0.1.0 dev
+> next dev
+
+node.exe : ⚠ Port 3000 is in use by process 11308, using available port 3002 instead.
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (⚠ Port 3000 is ...t 3002 instead.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+▲ Next.js 16.2.6 (Turbopack)
+- Local:         http://localhost:3002
+- Network:       http://192.168.1.119:3002
+✓ Ready in 561ms
+
+ GET / 200 in 1889ms (next.js: 1662ms, application-code: 227ms)
+ GET /coupons/1 200 in 763ms (next.js: 696ms, application-code: 67ms)
+ GET /coupons/1000 200 in 94ms (next.js: 18ms, application-code: 75ms)
+ GET /print 200 in 397ms (next.js: 345ms, application-code: 53ms)
+ GET / 200 in 78ms (next.js: 3ms, application-code: 75ms)
+ GET /coupons/1 200 in 56ms (next.js: 10ms, application-code: 46ms)
+ GET /coupons/1 200 in 50ms (next.js: 10ms, application-code: 41ms)
+ GET /coupons/1 200 in 64ms (next.js: 13ms, application-code: 50ms)
+ GET /print 200 in 38ms (next.js: 5ms, application-code: 32ms)
+ GET / 200 in 247ms (next.js: 75ms, application-code: 171ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won'
+t be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <HTTPAccessFallbackErrorBoundary pathname="/" notFound={{...}} forbidden={undefined} unauthorized={undefined} ...>
+      <RedirectBoundary>
+        <RedirectErrorBoundary router={{...}}>
+          <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{rsc:{...}, ...}} segmentPath={[...]} ...>
+            <SegmentViewNode type="page" pagePath="page.tsx">
+              <SegmentTrieNode>
+              <ClientPageRoot Component={function HomePage} serverProvidedParams={{...}}>
+                <HomePage params={Promise} searchParams={Promise}>
+                  <AdminShell>
+                    <div className="flex min-h...">
+                      <aside>
+                      <main className="flex-1">
+                        <header>
+                        <div className="px-8 py-6">
+                          <section>
+                          <section className="mt-6 flex ...">
+                            <div className="relative f...">
+                              <Search>
+                              <input
+                                value=""
+                                onChange={function onChange}
+                                placeholder="쿠폰 코드 또는 번호 검색 (예: 123, OPEN)"
+                                className="h-11 w-full rounded-xl border border-[var(--toss-gray-200)] bg-white pl-10 .
+.."
+-                               style={{caret-color:"transparent"}}
+                              >
+                            ...
+                          ...
+            ...
+          ...
+ 
+ GET /coupons/42 200 in 282ms (next.js: 126ms, application-code: 156ms)
+ GET / 200 in 132ms (next.js: 5ms, application-code: 127ms)
+ GET / 200 in 134ms (next.js: 17ms, application-code: 116ms)
+ GET /coupons/1 200 in 45ms (next.js: 19ms, application-code: 26ms)
+ GET / 200 in 28ms (next.js: 6ms, application-code: 22ms)
+ GET /coupons/1 200 in 77ms (next.js: 29ms, application-code: 49ms)
+✓ Compiled in 42ms
+ GET /coupons/1 200 in 215ms (next.js: 97ms, application-code: 118ms)
+ GET /coupons/1 200 in 81ms (next.js: 8ms, application-code: 73ms)
+ GET /coupons/1 200 in 25ms (next.js: 3ms, application-code: 21ms)
+✓ Compiled in 43ms
+ GET /coupons/1 200 in 169ms (next.js: 87ms, application-code: 82ms)
+ GET /coupons/1 200 in 84ms (next.js: 5ms, application-code: 79ms)
+ GET /coupons/1 200 in 40ms (next.js: 6ms, application-code: 34ms)
+ GET / 200 in 108ms (next.js: 78ms, application-code: 30ms)
+✓ Compiled in 41ms
+ GET / 200 in 98ms (next.js: 73ms, application-code: 24ms)
+✓ Compiled in 78ms
+⨯ ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  [90m2 |[0m
+  [90m3 |[0m [36mimport[0m { [33mQRCodeSVG[0m } [36mfrom[0m [32m"qrcode.react"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mAPP_ONELINK[0m, buildCouponCode } [36mfrom[0m [32m"@/lib/coupons
+"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36minterface[0m [33mCouponCardProps[0m {
+  [90m7 |[0m   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  [90m2 |[0m
+  [90m3 |[0m [36mimport[0m { [33mQRCodeSVG[0m } [36mfrom[0m [32m"qrcode.react"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mAPP_ONELINK[0m, buildCouponCode } [36mfrom[0m [32m"@/lib/coupons
+"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36minterface[0m [33mCouponCardProps[0m {
+  [90m7 |[0m   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  [90m13 |[0m [36mimport[0m { [33mAdminShell[0m } [36mfrom[0m [32m"@/components/AdminShell"[0m;
+  [90m14 |[0m [36mimport[0m { [33mCouponPreview[0m } [36mfrom[0m [32m"@/components/CouponPreview"[0m;
+[31m[1m>[0m [90m15 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m16 |[0m   [33mCOUPON_TOTAL[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m17 |[0m   allCouponIndices,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m18 |[0m   buildCouponCode,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m19 |[0m } [36mfrom[0m [32m"@/lib/coupons"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m20 |[0m [36mimport[0m { useCouponStore } [36mfrom[0m [32m"@/store/couponStore"[0m;
+  [90m21 |[0m
+  [90m22 |[0m [36mconst[0m [33mPAGE_SIZE[0m = [35m24[0m;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  [90m13 |[0m [36mimport[0m { [33mAdminShell[0m } [36mfrom[0m [32m"@/components/AdminShell"[0m;
+  [90m14 |[0m [36mimport[0m { [33mCouponPreview[0m } [36mfrom[0m [32m"@/components/CouponPreview"[0m;
+[31m[1m>[0m [90m15 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m16 |[0m   [33mCOUPON_TOTAL[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m17 |[0m   allCouponIndices,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m18 |[0m   buildCouponCode,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m19 |[0m } [36mfrom[0m [32m"@/lib/coupons"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m20 |[0m [36mimport[0m { useCouponStore } [36mfrom[0m [32m"@/store/couponStore"[0m;
+  [90m21 |[0m
+  [90m22 |[0m [36mconst[0m [33mPAGE_SIZE[0m = [35m24[0m;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+ GET / 500 in 1108ms (next.js: 970ms, application-code: 137ms)
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+⨯ ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  [90m2 |[0m
+  [90m3 |[0m [36mimport[0m { [33mQRCodeSVG[0m } [36mfrom[0m [32m"qrcode.react"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mAPP_ONELINK[0m, buildCouponCode } [36mfrom[0m [32m"@/lib/coupons
+"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36minterface[0m [33mCouponCardProps[0m {
+  [90m7 |[0m   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  [90m2 |[0m
+  [90m3 |[0m [36mimport[0m { [33mQRCodeSVG[0m } [36mfrom[0m [32m"qrcode.react"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mAPP_ONELINK[0m, buildCouponCode } [36mfrom[0m [32m"@/lib/coupons
+"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36minterface[0m [33mCouponCardProps[0m {
+  [90m7 |[0m   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  [90m13 |[0m [36mimport[0m { [33mAdminShell[0m } [36mfrom[0m [32m"@/components/AdminShell"[0m;
+  [90m14 |[0m [36mimport[0m { [33mCouponPreview[0m } [36mfrom[0m [32m"@/components/CouponPreview"[0m;
+[31m[1m>[0m [90m15 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m16 |[0m   [33mCOUPON_TOTAL[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m17 |[0m   allCouponIndices,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m18 |[0m   buildCouponCode,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m19 |[0m } [36mfrom[0m [32m"@/lib/coupons"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m20 |[0m [36mimport[0m { useCouponStore } [36mfrom[0m [32m"@/store/couponStore"[0m;
+  [90m21 |[0m
+  [90m22 |[0m [36mconst[0m [33mPAGE_SIZE[0m = [35m24[0m;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  [90m13 |[0m [36mimport[0m { [33mAdminShell[0m } [36mfrom[0m [32m"@/components/AdminShell"[0m;
+  [90m14 |[0m [36mimport[0m { [33mCouponPreview[0m } [36mfrom[0m [32m"@/components/CouponPreview"[0m;
+[31m[1m>[0m [90m15 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m16 |[0m   [33mCOUPON_TOTAL[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m17 |[0m   allCouponIndices,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m18 |[0m   buildCouponCode,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m19 |[0m } [36mfrom[0m [32m"@/lib/coupons"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m20 |[0m [36mimport[0m { useCouponStore } [36mfrom[0m [32m"@/store/couponStore"[0m;
+  [90m21 |[0m
+  [90m22 |[0m [36mconst[0m [33mPAGE_SIZE[0m = [35m24[0m;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+⨯ ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  [90m2 |[0m
+  [90m3 |[0m [36mimport[0m { [33mQRCodeSVG[0m } [36mfrom[0m [32m"qrcode.react"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mAPP_ONELINK[0m, buildCouponCode } [36mfrom[0m [32m"@/lib/coupons
+"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36minterface[0m [33mCouponCardProps[0m {
+  [90m7 |[0m   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  [90m2 |[0m
+  [90m3 |[0m [36mimport[0m { [33mQRCodeSVG[0m } [36mfrom[0m [32m"qrcode.react"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mAPP_ONELINK[0m, buildCouponCode } [36mfrom[0m [32m"@/lib/coupons
+"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36minterface[0m [33mCouponCardProps[0m {
+  [90m7 |[0m   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  [90m13 |[0m [36mimport[0m { [33mAdminShell[0m } [36mfrom[0m [32m"@/components/AdminShell"[0m;
+  [90m14 |[0m [36mimport[0m { [33mCouponPreview[0m } [36mfrom[0m [32m"@/components/CouponPreview"[0m;
+[31m[1m>[0m [90m15 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m16 |[0m   [33mCOUPON_TOTAL[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m17 |[0m   allCouponIndices,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m18 |[0m   buildCouponCode,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m19 |[0m } [36mfrom[0m [32m"@/lib/coupons"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m20 |[0m [36mimport[0m { useCouponStore } [36mfrom[0m [32m"@/store/couponStore"[0m;
+  [90m21 |[0m
+  [90m22 |[0m [36mconst[0m [33mPAGE_SIZE[0m = [35m24[0m;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+ GET / 500 in 39ms (next.js: 21ms, application-code: 17ms)
+
+
+./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  [90m13 |[0m [36mimport[0m { [33mAdminShell[0m } [36mfrom[0m [32m"@/components/AdminShell"[0m;
+  [90m14 |[0m [36mimport[0m { [33mCouponPreview[0m } [36mfrom[0m [32m"@/components/CouponPreview"[0m;
+[31m[1m>[0m [90m15 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m16 |[0m   [33mCOUPON_TOTAL[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m17 |[0m   allCouponIndices,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m18 |[0m   buildCouponCode,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m19 |[0m } [36mfrom[0m [32m"@/lib/coupons"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m20 |[0m [36mimport[0m { useCouponStore } [36mfrom[0m [32m"@/store/couponStore"[0m;
+  [90m21 |[0m
+  [90m22 |[0m [36mconst[0m [33mPAGE_SIZE[0m = [35m24[0m;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+ GET / 500 in 40ms (next.js: 28ms, application-code: 12ms)
+⨯ ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  [90m2 |[0m
+  [90m3 |[0m [36mimport[0m { [33mQRCodeSVG[0m } [36mfrom[0m [32m"qrcode.react"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mAPP_ONELINK[0m, buildCouponCode } [36mfrom[0m [32m"@/lib/coupons
+"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36minterface[0m [33mCouponCardProps[0m {
+  [90m7 |[0m   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  [90m2 |[0m
+  [90m3 |[0m [36mimport[0m { [33mQRCodeSVG[0m } [36mfrom[0m [32m"qrcode.react"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mAPP_ONELINK[0m, buildCouponCode } [36mfrom[0m [32m"@/lib/coupons
+"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36minterface[0m [33mCouponCardProps[0m {
+  [90m7 |[0m   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  [90m13 |[0m [36mimport[0m { [33mAdminShell[0m } [36mfrom[0m [32m"@/components/AdminShell"[0m;
+  [90m14 |[0m [36mimport[0m { [33mCouponPreview[0m } [36mfrom[0m [32m"@/components/CouponPreview"[0m;
+[31m[1m>[0m [90m15 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m16 |[0m   [33mCOUPON_TOTAL[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m17 |[0m   allCouponIndices,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m18 |[0m   buildCouponCode,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m19 |[0m } [36mfrom[0m [32m"@/lib/coupons"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m20 |[0m [36mimport[0m { useCouponStore } [36mfrom[0m [32m"@/store/couponStore"[0m;
+  [90m21 |[0m
+  [90m22 |[0m [36mconst[0m [33mPAGE_SIZE[0m = [35m24[0m;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  [90m13 |[0m [36mimport[0m { [33mAdminShell[0m } [36mfrom[0m [32m"@/components/AdminShell"[0m;
+  [90m14 |[0m [36mimport[0m { [33mCouponPreview[0m } [36mfrom[0m [32m"@/components/CouponPreview"[0m;
+[31m[1m>[0m [90m15 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m16 |[0m   [33mCOUPON_TOTAL[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m17 |[0m   allCouponIndices,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m18 |[0m   buildCouponCode,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m19 |[0m } [36mfrom[0m [32m"@/lib/coupons"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m20 |[0m [36mimport[0m { useCouponStore } [36mfrom[0m [32m"@/store/couponStore"[0m;
+  [90m21 |[0m
+  [90m22 |[0m [36mconst[0m [33mPAGE_SIZE[0m = [35m24[0m;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+[browser] Uncaught Error: ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./src/components/CouponCard.tsx:4:1)
+    at <unknown> (Error: (./src/components/CouponCard.tsx:4:1)
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponCard.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponCard.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/components/CouponCard.tsx:4:1
+Export APP_ONELINK doesn't exist in target module
+  2 |
+  3 | import { QRCodeSVG } from "qrcode.react";
+> 4 | import { APP_ONELINK, buildCouponCode } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 |
+  6 | interface CouponCardProps {
+  7 |   index: number;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/components/CouponCard.tsx [Client Component Browser]
+    ./src/components/CouponPreview.tsx [Client Component Browser]
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/components/CouponCard.tsx [Client Component SSR]
+    ./src/components/CouponPreview.tsx [Client Component SSR]
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+⨯ ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  [90m13 |[0m [36mimport[0m { [33mAdminShell[0m } [36mfrom[0m [32m"@/components/AdminShell"[0m;
+  [90m14 |[0m [36mimport[0m { [33mCouponPreview[0m } [36mfrom[0m [32m"@/components/CouponPreview"[0m;
+[31m[1m>[0m [90m15 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m16 |[0m   [33mCOUPON_TOTAL[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m17 |[0m   allCouponIndices,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m18 |[0m   buildCouponCode,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m19 |[0m } [36mfrom[0m [32m"@/lib/coupons"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m20 |[0m [36mimport[0m { useCouponStore } [36mfrom[0m [32m"@/store/couponStore"[0m;
+  [90m21 |[0m
+  [90m22 |[0m [36mconst[0m [33mPAGE_SIZE[0m = [35m24[0m;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+
+./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  [90m13 |[0m [36mimport[0m { [33mAdminShell[0m } [36mfrom[0m [32m"@/components/AdminShell"[0m;
+  [90m14 |[0m [36mimport[0m { [33mCouponPreview[0m } [36mfrom[0m [32m"@/components/CouponPreview"[0m;
+[31m[1m>[0m [90m15 |[0m [36mimport[0m {
+  [90m   |[0m [31m[1m^^^^^^^[0m
+[31m[1m>[0m [90m16 |[0m   [33mCOUPON_TOTAL[0m,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m17 |[0m   allCouponIndices,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m18 |[0m   buildCouponCode,
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^[0m
+[31m[1m>[0m [90m19 |[0m } [36mfrom[0m [32m"@/lib/coupons"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m20 |[0m [36mimport[0m { useCouponStore } [36mfrom[0m [32m"@/store/couponStore"[0m;
+  [90m21 |[0m
+  [90m22 |[0m [36mconst[0m [33mPAGE_SIZE[0m = [35m24[0m;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+ GET / 500 in 43ms (next.js: 29ms, application-code: 14ms)
+[browser] Uncaught Error: ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./src/app/page.tsx:15:1)
+    at <unknown> (Error: (./src/app/page.tsx:15:1)
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/page.tsx:15:1
+Export COUPON_TOTAL doesn't exist in target module
+  13 | import { AdminShell } from "@/components/AdminShell";
+  14 | import { CouponPreview } from "@/components/CouponPreview";
+> 15 | import {
+     | ^^^^^^^
+> 16 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 17 |   allCouponIndices,
+     | ^^^^^^^^^^^^^^^^^^^
+> 18 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 19 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  20 | import { useCouponStore } from "@/store/couponStore";
+  21 |
+  22 | const PAGE_SIZE = 24;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+✓ Compiled in 608ms
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+ GET / 500 in 74ms (next.js: 44ms, application-code: 30ms)
+[browser] Uncaught Error: ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+
+    at <unknown> (Error: ./src/app/coupons/[id]/page.tsx:7:1)
+    at <unknown> (Error: (./src/app/coupons/[id]/page.tsx:7:1)
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+ GET / 500 in 55ms (next.js: 28ms, application-code: 27ms)
+[browser] Uncaught Error: ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+
+    at <unknown> (Error: ./src/app/coupons/[id]/page.tsx:7:1)
+    at <unknown> (Error: (./src/app/coupons/[id]/page.tsx:7:1)
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export APP_ONELINK doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export APP_ONELINK was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/app/coupons/[id]/page.tsx:7:1
+Export COUPON_TOTAL doesn't exist in target module
+   5 | import { CouponCard } from "@/components/CouponCard";
+   6 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+>  7 | import {
+     | ^^^^^^^
+>  8 |   APP_ONELINK,
+     | ^^^^^^^^^^^^^^
+>  9 |   COUPON_TOTAL,
+     | ^^^^^^^^^^^^^^^
+> 10 |   buildCouponCode,
+     | ^^^^^^^^^^^^^^^^^^
+> 11 |   isValidCouponIndex,
+     | ^^^^^^^^^^^^^^^^^^^^^
+> 12 | } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^
+  13 |
+  14 | interface PageProps {
+  15 |   params: Promise<{ id: string }>;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-rsc] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist. 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+[browser] ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-ssr] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component] 
+⨯ ./src/app/coupons/[id]/page.tsx:5:1
+Module not found: Can't resolve '@/components/CouponDetailContent'
+  [90m3 |[0m [36mimport[0m { [33mAdminShell[0m } [36mfrom[0m [32m"@/components/AdminShell"[0m;
+  [90m4 |[0m [36mimport[0m { [33mCouponDetailActions[0m } [36mfrom[0m [32m"@/components/CouponDetailActions"[
+0m;
+[31m[1m>[0m [90m5 |[0m [36mimport[0m { [33mCouponDetailContent[0m } [36mfrom[0m [32m"@/components/CouponDet
+ailContent"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m6 |[0m
+  [90m7 |[0m [36minterface[0m [33mPageProps[0m {
+  [90m8 |[0m   params: [33mPromise[0m<{ id: string }>;
+
+Import map: aliased to relative './src/components/CouponDetailContent' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/coupons/[id]/page.tsx:5:1
+Module not found: Can't resolve '@/components/CouponDetailContent'
+  [90m3 |[0m [36mimport[0m { [33mAdminShell[0m } [36mfrom[0m [32m"@/components/AdminShell"[0m;
+  [90m4 |[0m [36mimport[0m { [33mCouponDetailActions[0m } [36mfrom[0m [32m"@/components/CouponDetailActions"[
+0m;
+[31m[1m>[0m [90m5 |[0m [36mimport[0m { [33mCouponDetailContent[0m } [36mfrom[0m [32m"@/components/CouponDet
+ailContent"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m6 |[0m
+  [90m7 |[0m [36minterface[0m [33mPageProps[0m {
+  [90m8 |[0m   params: [33mPromise[0m<{ id: string }>;
+
+Import map: aliased to relative './src/components/CouponDetailContent' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+ GET / 500 in 20ms (next.js: 11ms, application-code: 9ms)
+[browser] Uncaught Error: ./src/app/coupons/[id]/page.tsx:5:1
+Module not found: Can't resolve '@/components/CouponDetailContent'
+  3 | import { AdminShell } from "@/components/AdminShell";
+  4 | import { CouponDetailActions } from "@/components/CouponDetailActions";
+> 5 | import { CouponDetailContent } from "@/components/CouponDetailContent";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface PageProps {
+  8 |   params: Promise<{ id: string }>;
+
+Import map: aliased to relative './src/components/CouponDetailContent' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./src/app/coupons/[id]/page.tsx:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at <unknown> (Error: (./src/app/coupons/[id]/page.tsx:5:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+ GET / 500 in 18ms (next.js: 8ms, application-code: 10ms)
+[browser] Uncaught Error: ./src/components/CouponDetailActions.tsx:5:1
+Export COUPON_TOTAL doesn't exist in target module
+  3 | import Link from "next/link";
+  4 | import { Printer, ChevronRight, ChevronLeft } from "lucide-react";
+> 5 | import { COUPON_TOTAL } from "@/lib/coupons";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  6 |
+  7 | interface Props {
+  8 |   index: number;
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import trace:
+  Server Component:
+    ./src/components/CouponDetailActions.tsx
+    ./src/app/coupons/[id]/page.tsx
+
+
+    at <unknown> (Error: ./src/components/CouponDetailActions.tsx:5:1)
+    at <unknown> (Error: (./src/components/CouponDetailActions.tsx:5:1)
+ GET / 500 in 20ms (next.js: 10ms, application-code: 10ms)
+✓ Compiled in 82ms
+[browser] Uncaught Error: ./src/app/print/page.tsx:8:1
+Export COUPON_TOTAL doesn't exist in target module
+   6 | import { AdminShell } from "@/components/AdminShell";
+   7 | import { CouponCard } from "@/components/CouponCard";
+>  8 | import { COUPON_TOTAL } from "@/lib/coupons";
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   9 |
+  10 | export default function PrintBulkPage() {
+  11 |   const [from, setFrom] = useState(1);
+
+The export COUPON_TOTAL was not found in module [project]/src/lib/coupons.ts [app-client] (ecmascript).
+Did you mean to import BASE_W?
+All exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the req
+uested export doesn't exist.
+
+Import traces:
+  Client Component Browser:
+    ./src/app/print/page.tsx [Client Component Browser]
+    ./src/app/print/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/print/page.tsx [Client Component SSR]
+    ./src/app/print/page.tsx [Server Component]
+
+
+    at <unknown> (Error: ./src/app/print/page.tsx:8:1)
+    at <unknown> (Error: (./src/app/print/page.tsx:8:1)
+✓ Compiled in 34ms
+ GET / 200 in 321ms (next.js: 85ms, application-code: 236ms)
+ GET / 200 in 116ms (next.js: 3ms, application-code: 113ms)
+ GET /coupons/1 200 in 260ms (next.js: 96ms, application-code: 164ms)
+ GET /coupons/99999 200 in 45ms (next.js: 3ms, application-code: 42ms)
+ GET /print 200 in 172ms (next.js: 64ms, application-code: 109ms)
+ GET / 200 in 185ms (next.js: 22ms, application-code: 164ms)
+✓ Compiled in 46ms
+[browser] State loaded from storage couldn't be migrated since no migrate function was provided 
+    at module evaluation (src/store/couponStore.ts:50:37)
+    at module evaluation (src/components/CouponCard.tsx:16:25)
+  48 | }
+  49 |
+> 50 | export const useCouponStore = create<CouponState>()(
+     |                                     ^
+  51 |   persist(
+  52 |     (set) => ({
+  53 |       search: "", (src/store/couponStore.ts:50:37)
+⨯ TypeError: Cannot read properties of undefined (reading 'x')
+    at CouponSettingsPanel (src\components\CouponSettingsPanel.tsx:102:40)
+  100 |                 <NumField
+  101 |                   label="X"
+> 102 |                   value={settings.text.x}
+      |                                        ^
+  103 |                   min={0}
+  104 |                   max={BASE_W}
+  105 |                   onChange={(v) => updateText({ x: v })} {
+  digest: '2104580028'
+}
+ GET / 200 in 273ms (next.js: 84ms, application-code: 189ms)
+ GET / 500 in 118ms (next.js: 6ms, application-code: 112ms)
+[browser] State loaded from storage couldn't be migrated since no migrate function was provided 
+    at module evaluation (src/store/couponStore.ts:50:37)
+    at module evaluation (src/components/CouponCard.tsx:5:1)
+    at module evaluation (src/components/CouponPreview.tsx:5:1)
+    at module evaluation (src/app/page.tsx:14:1)
+  48 | }
+  49 |
+> 50 | export const useCouponStore = create<CouponState>()(
+     |                                     ^
+  51 |   persist(
+  52 |     (set) => ({
+  53 |       search: "", (src/store/couponStore.ts:50:37)
+[browser] Uncaught TypeError: Cannot read properties of undefined (reading 'x')
+    at CouponSettingsPanel (src/components/CouponSettingsPanel.tsx:102:40)
+    at HomePage (src/app/page.tsx:87:11)
+  100 |                 <NumField
+  101 |                   label="X"
+> 102 |                   value={settings.text.x}
+      |                                        ^
+  103 |                   min={0}
+  104 |                   max={BASE_W}
+  105 |                   onChange={(v) => updateText({ x: v })}
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⨯ TypeError: Cannot read properties of undefined (reading 'x')
+    at CouponSettingsPanel (src\components\CouponSettingsPanel.tsx:102:40)
+  100 |                 <NumField
+  101 |                   label="X"
+> 102 |                   value={settings.text.x}
+      |                                        ^
+  103 |                   min={0}
+  104 |                   max={BASE_W}
+  105 |                   onChange={(v) => updateText({ x: v })} {
+  digest: '2104580028'
+}
+✓ Compiled in 50ms
+ GET / 500 in 220ms (next.js: 99ms, application-code: 121ms)
+[browser] State loaded from storage couldn't be migrated since no migrate function was provided 
+    at module evaluation (src/store/couponStore.ts:50:37)
+    at module evaluation (src/components/CouponCard.tsx:5:1)
+    at module evaluation (src/components/CouponPreview.tsx:5:1)
+    at module evaluation (src/app/page.tsx:14:1)
+  48 | }
+  49 |
+> 50 | export const useCouponStore = create<CouponState>()(
+     |                                     ^
+  51 |   persist(
+  52 |     (set) => ({
+  53 |       search: "", (src/store/couponStore.ts:50:37)
+[browser] Uncaught TypeError: Cannot read properties of undefined (reading 'x')
+    at CouponSettingsPanel (src/components/CouponSettingsPanel.tsx:102:40)
+    at HomePage (src/app/page.tsx:87:11)
+  100 |                 <NumField
+  101 |                   label="X"
+> 102 |                   value={settings.text.x}
+      |                                        ^
+  103 |                   min={0}
+  104 |                   max={BASE_W}
+  105 |                   onChange={(v) => updateText({ x: v })}
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⨯ TypeError: Cannot read properties of undefined (reading 'x')
+    at CouponSettingsPanel (src\components\CouponSettingsPanel.tsx:101:40)
+   99 |                 <NumField
+  100 |                   label="X"
+> 101 |                   value={settings.text.x}
+      |                                        ^
+  102 |                   min={0}
+  103 |                   max={BASE_W}
+  104 |                   onChange={(v) => updateText({ x: v })} {
+  digest: '3985225725'
+}
+✓ Compiled in 48ms
+ GET / 500 in 230ms (next.js: 80ms, application-code: 150ms)
+[browser] State loaded from storage couldn't be migrated since no migrate function was provided 
+    at module evaluation (src/store/couponStore.ts:50:37)
+    at module evaluation (src/components/CouponCard.tsx:5:1)
+    at module evaluation (src/components/CouponPreview.tsx:5:1)
+    at module evaluation (src/app/page.tsx:14:1)
+  48 | }
+  49 |
+> 50 | export const useCouponStore = create<CouponState>()(
+     |                                     ^
+  51 |   persist(
+  52 |     (set) => ({
+  53 |       search: "", (src/store/couponStore.ts:50:37)
+[browser] Uncaught TypeError: Cannot read properties of undefined (reading 'x')
+    at CouponSettingsPanel (src/components/CouponSettingsPanel.tsx:101:40)
+    at HomePage (src/app/page.tsx:87:11)
+   99 |                 <NumField
+  100 |                   label="X"
+> 101 |                   value={settings.text.x}
+      |                                        ^
+  102 |                   min={0}
+  103 |                   max={BASE_W}
+  104 |                   onChange={(v) => updateText({ x: v })}
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 37ms
+ GET / 200 in 284ms (next.js: 100ms, application-code: 185ms)
+[browser] State loaded from storage couldn't be migrated since no migrate function was provided 
+    at module evaluation (src/store/couponStore.ts:50:37)
+    at module evaluation (src/components/CouponCard.tsx:5:1)
+    at module evaluation (src/components/CouponPreview.tsx:5:1)
+    at module evaluation (src/app/page.tsx:14:1)
+  48 | }
+  49 |
+> 50 | export const useCouponStore = create<CouponState>()(
+     |                                     ^
+  51 |   persist(
+  52 |     (set) => ({
+  53 |       search: "", (src/store/couponStore.ts:50:37)
+ GET / 200 in 75ms (next.js: 3ms, application-code: 72ms)
+ GET /coupons/1 200 in 187ms (next.js: 68ms, application-code: 119ms)
+ GET /print 200 in 152ms (next.js: 69ms, application-code: 83ms)
+ GET / 200 in 172ms (next.js: 7ms, application-code: 165ms)
+[browser] State loaded from storage couldn't be migrated since no migrate function was provided 
+    at module evaluation (src/store/couponStore.ts:50:37)
+    at module evaluation (src/components/CouponCard.tsx:5:1)
+    at module evaluation (src/components/CouponPreview.tsx:5:1)
+    at module evaluation (src/app/page.tsx:14:1)
+  48 | }
+  49 |
+> 50 | export const useCouponStore = create<CouponState>()(
+     |                                     ^
+  51 |   persist(
+  52 |     (set) => ({
+  53 |       search: "", (src/store/couponStore.ts:50:37)
+✓ Compiled in 71ms
+ GET / 200 in 155ms (next.js: 77ms, application-code: 78ms)
+ GET / 200 in 52ms (next.js: 4ms, application-code: 48ms)
+ GET / 200 in 20ms (next.js: 2ms, application-code: 18ms)
+ GET / 200 in 128ms (next.js: 2ms, application-code: 125ms)
+✓ Compiled in 73ms
+ GET / 200 in 181ms (next.js: 87ms, application-code: 94ms)
+ GET / 200 in 54ms (next.js: 4ms, application-code: 50ms)
+ GET / 200 in 20ms (next.js: 3ms, application-code: 17ms)
+✓ Compiled in 32ms
+ GET / 200 in 140ms (next.js: 61ms, application-code: 79ms)
+ GET / 200 in 59ms (next.js: 8ms, application-code: 51ms)
+ GET / 200 in 34ms (next.js: 5ms, application-code: 30ms)
+✓ Compiled in 37ms
+ GET / 200 in 173ms (next.js: 120ms, application-code: 53ms)
+✓ Compiled in 47ms
+ GET / 200 in 123ms (next.js: 82ms, application-code: 41ms)
+ GET / 200 in 33ms (next.js: 2ms, application-code: 30ms)
+ GET / 200 in 19ms (next.js: 3ms, application-code: 16ms)
+ GET / 200 in 134ms (next.js: 3ms, application-code: 131ms)
+✓ Compiled in 101ms
+✓ Compiled in 82ms
+ GET / 200 in 187ms (next.js: 91ms, application-code: 95ms)
+ GET / 200 in 49ms (next.js: 4ms, application-code: 45ms)
+ GET / 200 in 21ms (next.js: 3ms, application-code: 18ms)
+ GET /print 200 in 88ms (next.js: 61ms, application-code: 27ms)
+ GET / 200 in 32ms (next.js: 6ms, application-code: 26ms)
+✓ Compiled in 91ms
+ GET / 200 in 128ms (next.js: 3ms, application-code: 125ms)
