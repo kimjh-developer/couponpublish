@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import {
@@ -20,13 +20,9 @@ import { useCouponStore } from "@/store/couponStore";
 
 const PAGE_SIZE = 24;
 
-export default function HomePage() {
+function PrefixSync() {
   const searchParams = useSearchParams();
-  const search = useCouponStore((s) => s.search);
-  const setSearch = useCouponStore((s) => s.setSearch);
-  const settings = useCouponStore((s) => s.settings);
   const updateSettings = useCouponStore((s) => s.updateSettings);
-  const [page, setPage] = useState(1);
 
   useEffect(() => {
     const prefixParam = searchParams.get("prefix");
@@ -34,6 +30,15 @@ export default function HomePage() {
       updateSettings({ prefix: prefixParam });
     }
   }, [searchParams, updateSettings]);
+
+  return null;
+}
+
+export default function HomePage() {
+  const search = useCouponStore((s) => s.search);
+  const setSearch = useCouponStore((s) => s.setSearch);
+  const settings = useCouponStore((s) => s.settings);
+  const [page, setPage] = useState(1);
 
   const filtered = useMemo(() => {
     const all = allCouponIndices(settings.startIndex, settings.total);
@@ -54,6 +59,9 @@ export default function HomePage() {
 
   return (
     <AdminShell>
+      <Suspense>
+        <PrefixSync />
+      </Suspense>
       <header className="sticky top-0 z-10 flex h-16 items-center justify-between border-b border-[var(--toss-gray-200)] bg-white/80 px-8 backdrop-blur-md no-print">
         <div className="flex items-center gap-2">
           <h1 className="text-[18px] font-bold text-[var(--toss-gray-900)]">
