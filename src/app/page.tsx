@@ -1,7 +1,8 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   Search,
   Printer,
@@ -20,10 +21,19 @@ import { useCouponStore } from "@/store/couponStore";
 const PAGE_SIZE = 24;
 
 export default function HomePage() {
+  const searchParams = useSearchParams();
   const search = useCouponStore((s) => s.search);
   const setSearch = useCouponStore((s) => s.setSearch);
   const settings = useCouponStore((s) => s.settings);
+  const updateSettings = useCouponStore((s) => s.updateSettings);
   const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    const prefixParam = searchParams.get("prefix");
+    if (prefixParam) {
+      updateSettings({ prefix: prefixParam });
+    }
+  }, [searchParams, updateSettings]);
 
   const filtered = useMemo(() => {
     const all = allCouponIndices(settings.startIndex, settings.total);
